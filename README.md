@@ -18,7 +18,7 @@ The suspicion score is the number of flags a review trips, from 0 to 4. A score 
 The app has two tabs:
 
 - Check one review: type in a rating, length, reviews that day and helpful votes, and see the verdict, which flags were tripped and where the review sits on the Poisson curve.
-- Analyse a CSV: upload your own file (or use the bundled sample) and get the number flagged, a score chart, the ten most suspicious rows and a download of the scored file. If the file has a `label` column (genuine or fake) it also shows precision and recall.
+- Analyse a CSV: upload your own file (or use the built-in simulated sample) and get the number flagged, a score chart, the ten most suspicious rows and a download of the scored file. If the file has a `label` column (genuine or fake) it also shows precision and recall.
 
 ## Run it
 
@@ -44,8 +44,7 @@ shiny::runGitHub("fake-review-detector", "aasthamaskara", subdir = "app")
 
 ```
 app/app.R                 the Shiny app (interface and server)
-app/scoring.R             the scoring functions (z-scores, Poisson tail, flags)
-app/sample_reviews.csv    1,000 simulated reviews (900 genuine, 100 fake)
+app/scoring.R             scoring functions (z-scores, Poisson tail, flags) and the simulated sample data
 R/fake_review_detection.R the full command line analysis used in the report
 ```
 
